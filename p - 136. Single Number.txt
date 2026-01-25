@@ -1,0 +1,33 @@
+136. Single Number
+
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+ 
+
+Example 1:
+
+Input: nums = [2,2,1]
+
+Output: 1
+
+Solution:
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        '''repeat = []  # This only pass 60 out of 61 test case.
+        for i in range(0,len(nums)-1):
+            for j in range(i+1,len(nums)):
+                if nums[i] == nums[j]:
+                    repeat.append(nums[i])
+        
+        for k in nums:
+            if k not in repeat:
+                return k''' 
+
+        xor = 0
+        for num in nums:
+            xor ^= num
+        
+        return xor
